@@ -2,7 +2,6 @@ from django.test import TestCase
 from .models import Course
 from rest_framework.test import APITestCase
 from rest_framework import status
-import requests
 
 class CourseTestCases(TestCase):
     def setUp(self) -> None:
