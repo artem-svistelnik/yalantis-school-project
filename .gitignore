@@ -1,6 +1,0 @@
-venv/
-__pycache__/
-.idea/
-course_api/migrations/
-db.sqlite3
-*pyc
