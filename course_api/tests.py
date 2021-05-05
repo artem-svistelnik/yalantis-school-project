@@ -29,7 +29,7 @@ class CourseApiTest(APITestCase):
     def test_course_list_get_request(self):
         url='/api/courses/'
         response = self.client.get(url, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK,'object not found')
+        self.assertEqual(response.status_code, status.HTTP_200_OK,'objects not found')
 
 
     def test_course_get_request(self):
@@ -55,6 +55,8 @@ class CourseApiTest(APITestCase):
                                         "start_date": "2021-05-04",
                                         "finish_date": "2021-05-21",
                                         "lectures_count": 15},'object not created')
+        self.assertEqual(Course.objects.count(),2,'object not created')
+        self.assertEqual(Course.objects.get(id=2).course_title,'new title','object not created')
 
     def test_course_put_request(self):
         url = '/api/courses/{}/'.format(self.course.id)
@@ -64,6 +66,7 @@ class CourseApiTest(APITestCase):
                 "lectures_count": 20}
         response = self.client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK,'object not changed')
+        self.assertEqual(Course.objects.get(id=1).course_title,'change title','object not changed')
 
     def test_course_delete_request(self):
         url = '/api/courses/{}/'.format(self.course.id)
