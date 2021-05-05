@@ -75,7 +75,8 @@ put requests on : http://localhost:5000/api/courses/id/ with data in json format
 delete requests on http://localhost:5000/api/courses/id/
 
 #Tests
-**Run tests: **
+
+**Run tests:**
 
 `python manage.py test`
 
