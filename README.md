@@ -1,16 +1,25 @@
 # yalantis-python-school
 
-**Deployment and launch instructions**
+**Deployment and launch instructions **
 
 In an empty directory, execute the command::
 
 `git clone https://github.com/artem-svistelnik/yalantis-python-school.git`
 
-Create virtual environment (venv) and run it
+Create virtual environment (venv) and run it.
+
+Linux:
 
 `python3 -m venv venv`
 
 `source venv/bin/activate`
+
+Windows
+
+`python3 -m venv venv`
+
+`.\venv\Scripts\activate.bat`
+
 
 Go to the directory with the project
 
