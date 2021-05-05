@@ -144,3 +144,7 @@ class CourseApiFailedTest(APITestCase):
         response = self.client.get(url, format="json")
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST, "request 200 ok")
 
+    def test_get_request_search(self):
+        url = "/api/courses/?search=title@afsa"
+        response = self.client.get(url, format="json")
+        self.assertNotEqual(response.status_code, status.HTTP_400_BAD_REQUEST, "request status 200 ok")
