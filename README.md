@@ -8,6 +8,10 @@ In an empty directory, execute the command::
 
 Create virtual environment (venv) and run it
 
+`python3 -m venv venv`
+
+`source venv/bin/activate`
+
 Go to the directory with the project
 
 `cd yalantis-python-school`
