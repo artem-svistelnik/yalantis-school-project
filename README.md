@@ -1,45 +1,45 @@
 # yalantis-python-school
 
-**Инструкция по развертыванию и запуску**
+**Deployment and launch instructions**
 
-В пустой дериктории выполнить команду:
+In an empty directory, execute the command::
 
 `git clone https://github.com/artem-svistelnik/yalantis-python-school.git`
 
-Создать виртуальное окружение (venv) и запустить его
+Create virtual environment (venv) and run it
 
-Перейти в папку с проектом
+Go to the directory with the project
 
 `cd yalantis-python-school`
 
-Установить все необходимые зависимости 
+Install all required dependencies
 
 `pip install -r requirements.txt `
 
-Создать миграцию
+Create migration
 
 `python manage.py makemigrations course_api`
 
-Применить миграцию
+Apply migration
 
 `python manage.py migrate`
 
-Создать суперпользователя
+Create superuser
 
 `python manage.py createsuperuser`
 
-Запустить сервер
+run server
 
 `python manage.py runserver `
-_Можно добавить в конце строки номер порта. Например : "5000"_
+_You can add a port number at the end of the line. For example: "5000"_
 
 
-**Последующим необходимо заполнить базу несколькими записями в таблице "курсы"**
+**Next, you need to fill the base with several entries in the "courses" table**
 
-**Роутинг по пунктам :**
+**Description of requests :**
 
-1. _Додавання курсу в каталог_:
- post запрос на http://localhost:5000/api/courses/ c данными в формате json
+1. _Adding a course to the catalog_:
+ post requests on http://localhost:5000/api/courses/ with data in json format
 `{
     "course_title": "new",
     "start_date": "2021-05-04",
@@ -47,22 +47,22 @@ _Можно добавить в конце строки номер порта. �
     "lectures_count": 15
 }`
 
-2. _Відображення списку курсів_:
-get запрос на http://localhost:5000/api/courses/
+2. _The list of courses_:
+get requests on http://localhost:5000/api/courses/
 
-3. _Відображення деталей курсу по id (детальна сторінка курсу повинна відображати повну інформацію про курс)_:
-get запрос на http://localhost:5000/api/courses/id/
+3. _Course details by id (detailed course page display full course information)_:
+get requests on http://localhost:5000/api/courses/id/
 
-4. _Пошук курсу за назвою і фільтр по датах_:
+4. _Search for a course by name and filter by date_:
 
-    4.1 Фильтр по датах`?start_date=04.05.2021&finish_date=21.05.2021` 
-         get запрос: http://localhost:5000/api/courses/?start_date=04.05.2021&finish_date=21.05.2021
+    4.1 Filter by date`?start_date=04.05.2021&finish_date=21.05.2021` 
+         get requests on: http://localhost:5000/api/courses/?start_date=04.05.2021&finish_date=21.05.2021
 
-    4.2 Поиск  `?search=something`
-        get запрос : http://localhost:5000/api/courses/?search=something
+    4.2 Search  `?search=something`
+        get requests on : http://localhost:5000/api/courses/?search=something
 
-5. _Зміна атрибутів курсу_:
-put запрос на : http://localhost:5000/api/courses/id/ c данными в формате json
+5. _Changing course attributes_:
+put requests on : http://localhost:5000/api/courses/id/ with data in json format
 `{
     "course_title": "changed title",
     "start_date": "2021-05-04",
@@ -70,7 +70,7 @@ put запрос на : http://localhost:5000/api/courses/id/ c данными �
     "lectures_count": 15
 }`
 
-6. _Видалення курсу_:
+6. _Deleting a course_:
 
-delete запрос на http://localhost:5000/api/courses/id/
+delete requests on http://localhost:5000/api/courses/id/
 
