@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+course_api/migrations/
+db.sqlite3
+*pyc
